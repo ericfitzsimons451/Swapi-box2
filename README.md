@@ -10,12 +10,11 @@
 ### This project was our first attempt at using asyncronous Javascript.  As the first project of the 3rd module at Turing School of Software and Design, this week-long task gave us a good overview of working with the fetch API as well as asynchronous Javascript and async-testing.  The project asked for more robust code using modular project architecture, prop-types, and a very DRY approach.
 
 ## Tech Stack
-### ReactJS
-### JSX
-### Jest/Enzyme testing
-### Sass
-### API fetch
+### -ReactJS
+### -JSX
+### -Jest/Enzyme testing
+### -Sass
+### -API fetch
 
 ## Wireframe
 
-![Image of Wireframe](MacintoshHD/Users/ericfitzsimons/Desktop/Screen%20Shot%202019-03-11%20at%204.32.22%20PM.png)

@@ -18,4 +18,4 @@
 
 ## Wireframe
 
-![Image of Wireframe](Screen Shot 2019-03-11 at 4.32.22 PM.png)
+![Image of Wireframe](MacintoshHD/Users/ericfitzsimons/Desktop/Screen%20Shot%202019-03-11%20at%204.32.22%20PM.png)

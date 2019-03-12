@@ -1,0 +1,22 @@
+.nav-container {
+    text-align: center;
+}
+
+.nav-container button {
+    width: 140px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black;
+    background-color: #D3C381;
+    font-size: 1.5rem;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.title {
+    text-align: center;
+    font-family: 'Star Jedi', arial;
+    color: #7F2C39;
+    font-size: 4rem;
+}

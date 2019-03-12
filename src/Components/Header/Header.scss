@@ -1,0 +1,33 @@
+.scrolling-container {
+    height: 30vh;
+    width: 100vw;
+    overflow: hidden;
+    background: black;
+    padding-right: 10px;
+  }
+  
+  .scrolling-text {
+    font-size: 1.9em;
+    color: #D3C381;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    line-height: 35px;
+    text-align: center;
+    transform: translateY(100%);
+    animation: scrolling-text 15s linear infinite;
+  }
+  
+  @keyframes scrolling-text {
+    0%   { 
+   
+    transform: translateY(100%); 		
+    }
+    100% { 
+  
+    transform: translateY(-100%); 
+  }
+  }
+  
+  
+  

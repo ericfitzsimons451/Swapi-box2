@@ -4,7 +4,7 @@ import Header from '../Header/Header.js'
 import Loader from '../Loader/Loader.js'
 import Nav from '../Nav/Nav.js'
 import fetchAnything from '../FetchAnything/FetchAnything.js'
-import { cleanPeople, cleanPlanets } from '../Cleaners/Cleaners.js'
+import { cleanPeople, cleanPlanets, cleanVehicles } from '../Cleaners/Cleaners.js'
 
 
 class App extends Component {
@@ -41,8 +41,9 @@ class App extends Component {
 
   fetchVehicles = async () => {
     const url = 'https://swapi.co/api/vehicles'
-    const data = await fetchAnything(url)
-    this.setState({vehicles: data.results})
+    const vehicles = await fetchAnything(url)
+    const cleanedVehicles = cleanVehicles(vehicles.results)
+    this.setState({vehicles: await Promise.all(cleanedVehicles)})
   }
 
   render() {

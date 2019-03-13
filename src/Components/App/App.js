@@ -20,7 +20,6 @@ class App extends Component {
 
   async componentDidMount() {
     const randomNum = Math.floor(Math.random() * 7) + 1
-    console.log('random', randomNum)
     const response = await fetch(`https://swapi.co/api/films/${randomNum}`)
     const data = await response.json()
     this.setState({crawlText: data.opening_crawl})

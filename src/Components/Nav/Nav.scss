@@ -1,5 +1,6 @@
 .nav-container {
     text-align: center;
+    min-height: 100%;
 }
 
 .nav-container button {
@@ -17,6 +18,7 @@
 .title {
     text-align: center;
     font-family: 'Star Jedi', arial;
-    color: #7F2C39;
+    color: rgb(181, 35, 45);
+    text-decoration-line: underline;
     font-size: 4rem;
 }

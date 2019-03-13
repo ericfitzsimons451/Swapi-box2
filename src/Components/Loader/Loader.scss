@@ -1,4 +1,19 @@
 .loader {
-    text-align: center;
-    
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk1JPVMTAdJymKTf3W62Xdd2U6VWRk9FNxLsvRATrWBER1BHmN');
+    min-height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.loader h1,
+.loader h2,
+.loader h3 {
+    font-size-adjust: 100;
+    position: relative;
+    left: 10vw;
+    top: 10vh;
+    color: black;
+}
+.loader span {
+    color: purple;
 }

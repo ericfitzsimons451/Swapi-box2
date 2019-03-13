@@ -1,5 +1,6 @@
 import React from 'react'
 import './Nav.scss'
+import PropTypes from 'prop-types'
 
 const Nav = ({ fetchPeople, fetchPlanets, fetchVehicles }) => {
     return (
@@ -11,6 +12,11 @@ const Nav = ({ fetchPeople, fetchPlanets, fetchVehicles }) => {
             <button>Favorites</button>
         </div>
     )
+}
+Nav.propTypes = {
+    fetchPeople: PropTypes.func,
+    fetchPlanets: PropTypes.func,
+    fetchVehicles: PropTypes.func
 }
 
 export default Nav

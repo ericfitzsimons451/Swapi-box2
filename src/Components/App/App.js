@@ -4,6 +4,8 @@ import Header from '../Header/Header.js'
 import Loader from '../Loader/Loader.js'
 import Nav from '../Nav/Nav.js'
 import fetchAnything from '../FetchAnything/FetchAnything.js'
+import { cleanPeople, cleanPlanets } from '../Cleaners/Cleaners.js'
+
 
 class App extends Component {
   constructor() {
@@ -17,7 +19,8 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const randomNum = Math.floor(Math.random() * 7) - 1
+    const randomNum = Math.floor(Math.random() * 7) + 1
+    console.log('random', randomNum)
     const response = await fetch(`https://swapi.co/api/films/${randomNum}`)
     const data = await response.json()
     this.setState({crawlText: data.opening_crawl})
@@ -26,21 +29,15 @@ class App extends Component {
   fetchPeople = async () => {
     const url = 'https://swapi.co/api/people'
     const people = await fetchAnything(url)
-    const cleanedPeople = people.map(async (person) => {
-      const homeworld = await fetchAnything(person.homeworld)
-      const species = await fetchAnything(person.species)
-      return {name: person.name,
-              homeworld: homeworld.name,
-              species: species.name,
-              population: homeworld.population}
-    })
+    const cleanedPeople = cleanPeople(people.results)
     this.setState({people: await Promise.all(cleanedPeople)})
   }
 
   fetchPlanets = async () => {
     const url = 'https://swapi.co/api/planets'
-    const data = await fetchAnything(url)
-    this.setState({planets: data.results})
+    const planets = await fetchAnything(url)
+    const cleanedPlanets = cleanPlanets(planets.results)
+    this.setState({planets: await Promise.all(cleanedPlanets)})
   }
 
   fetchVehicles = async () => {

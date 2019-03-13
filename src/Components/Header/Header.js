@@ -11,7 +11,7 @@ const Header = ({ crawlText }) => {
 }
 
 Header.propTypes = {
-    crawlText: PropTypes.func
+    crawlText: PropTypes.string
 }
 
 export default Header

@@ -9,7 +9,7 @@ const Nav = ({ fetchPeople, fetchPlanets, fetchVehicles }) => {
             <button onClick={fetchPeople}>People</button>
             <button onClick={fetchPlanets}>Planets</button>
             <button onClick={fetchVehicles}>Vehicles</button>
-            <button>Favorites</button>
+            <button>Favorites <span>0</span></button>
         </div>
     )
 }

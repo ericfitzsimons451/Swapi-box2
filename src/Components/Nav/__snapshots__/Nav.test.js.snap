@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match the snapshot with 3 functions passed down 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Nav
+    fetchPeople={[MockFunction]}
+    fetchPlanets={[MockFunction]}
+    fetchVehicles={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1
+          className="title"
+        >
+          SwapiBox
+        </h1>,
+        <button
+          onClick={[MockFunction]}
+        >
+          People
+        </button>,
+        <button
+          onClick={[MockFunction]}
+        >
+          Planets
+        </button>,
+        <button
+          onClick={[MockFunction]}
+        >
+          Vehicles
+        </button>,
+        <button>
+          Favorites 
+          <span>
+            0
+          </span>
+        </button>,
+      ],
+      "className": "nav-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "SwapiBox",
+          "className": "title",
+        },
+        "ref": null,
+        "rendered": "SwapiBox",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "People",
+          "onClick": [MockFunction],
+        },
+        "ref": null,
+        "rendered": "People",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Planets",
+          "onClick": [MockFunction],
+        },
+        "ref": null,
+        "rendered": "Planets",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Vehicles",
+          "onClick": [MockFunction],
+        },
+        "ref": null,
+        "rendered": "Vehicles",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Favorites ",
+            <span>
+              0
+            </span>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Favorites ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "0",
+            },
+            "ref": null,
+            "rendered": "0",
+            "type": "span",
+          },
+        ],
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1
+            className="title"
+          >
+            SwapiBox
+          </h1>,
+          <button
+            onClick={[MockFunction]}
+          >
+            People
+          </button>,
+          <button
+            onClick={[MockFunction]}
+          >
+            Planets
+          </button>,
+          <button
+            onClick={[MockFunction]}
+          >
+            Vehicles
+          </button>,
+          <button>
+            Favorites 
+            <span>
+              0
+            </span>
+          </button>,
+        ],
+        "className": "nav-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "SwapiBox",
+            "className": "title",
+          },
+          "ref": null,
+          "rendered": "SwapiBox",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "People",
+            "onClick": [MockFunction],
+          },
+          "ref": null,
+          "rendered": "People",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Planets",
+            "onClick": [MockFunction],
+          },
+          "ref": null,
+          "rendered": "Planets",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Vehicles",
+            "onClick": [MockFunction],
+          },
+          "ref": null,
+          "rendered": "Vehicles",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Favorites ",
+              <span>
+                0
+              </span>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Favorites ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "0",
+              },
+              "ref": null,
+              "rendered": "0",
+              "type": "span",
+            },
+          ],
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import '../../reset.scss'
 import './App.scss';
 import Header from '../Header/Header.js'
 import Loader from '../Loader/Loader.js'
 import Nav from '../Nav/Nav.js'
+import CardContainer from '../CardContainer/CardContainer.js'
 import fetchAnything from '../FetchAnything/FetchAnything.js'
 import { cleanPeople, cleanPlanets, cleanVehicles } from '../Cleaners/Cleaners.js'
 
@@ -61,6 +63,7 @@ class App extends Component {
           <Nav className="nav" fetchPeople={this.fetchPeople} 
                fetchPlanets={this.fetchPlanets} 
                fetchVehicles={this.fetchVehicles} />
+          <CardContainer data={this.state} />
         </div>
       );
     }

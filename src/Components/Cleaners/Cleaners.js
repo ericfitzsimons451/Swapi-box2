@@ -4,12 +4,13 @@ export const cleanPeople = (peopleArray) => {
     const cleanedPeople = peopleArray.map( async (person) => {
         const homeworld = await fetchAnything(person.homeworld)
         const species = await fetchAnything(person.species)
+        console.log(species)
         return {name: person.name,
                 homeworld: homeworld.name,
                 species: species.name,
                 population: homeworld.population}
         })
-    return cleanedPeople
+    return Promise.all(cleanedPeople)
 }
 
 export const cleanPlanets = (planetsArray) => {
@@ -19,11 +20,15 @@ export const cleanPlanets = (planetsArray) => {
             return foundResident
         })
         const resolvedResidents = await Promise.all(residents)
+        const mappedResidents = resolvedResidents.map((resident) => {
+            console.log(resident)
+            return resident.name
+        })
         return {name: planet.name,
                 terrain: planet.terrain,
                 population: planet.population,
                 climate: planet.climate,
-                residents: resolvedResidents}
+                residents: mappedResidents}
     })
     return cleanedPlanets
 }

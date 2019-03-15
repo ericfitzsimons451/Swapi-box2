@@ -30,8 +30,8 @@ class App extends Component {
   fetchPeople = async () => {
     const url = 'https://swapi.co/api/people'
     const people = await fetchAnything(url)
-    const cleanedPeople = cleanPeople(people.results)
-    this.setState({people: await Promise.all(cleanedPeople)})
+    const cleanedPeople = await cleanPeople(people.results)
+    this.setState({people: cleanedPeople})
   }
 
   fetchPlanets = async () => {

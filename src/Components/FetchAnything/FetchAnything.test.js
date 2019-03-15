@@ -1,4 +1,3 @@
-import React from 'react'
 import { fetchAnything }  from '../FetchAnything/fetchAnything.js'
 
 describe('fetchAnything', () => {

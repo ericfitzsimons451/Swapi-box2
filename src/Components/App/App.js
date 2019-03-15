@@ -57,13 +57,13 @@ class App extends Component {
         </div>
       )
     } else {
-      return (
+      return (    
         <div className="App">
           <Header crawlText={crawlText} />
           <Nav className="nav" fetchPeople={this.fetchPeople} 
                fetchPlanets={this.fetchPlanets} 
                fetchVehicles={this.fetchVehicles} />
-          <CardContainer data={this.state} />
+          <CardContainer data={this.state}/>
         </div>
       );
     }
@@ -71,3 +71,11 @@ class App extends Component {
 }
 
 export default App;
+
+//put a property in state that will denote
+//the currently selected values (planets, people, etc)
+//then , based on that, I can map over props
+// and pass the correct data
+
+//Card cntainer should be given only the data needed for the cards to render
+

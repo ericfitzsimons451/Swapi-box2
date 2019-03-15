@@ -13,6 +13,9 @@ const Card = (props) => {
 }
 
 export default Card
-//homeworld
-//species
-//population
+
+//if the data given is specific to the vehicles/people, 
+//then there is only 1 way that it can be rendered.  Don't map over
+//state given as props, map over the props that are specific to 
+//this card.  There will be no _____, if that is
+//not part of the displayed card

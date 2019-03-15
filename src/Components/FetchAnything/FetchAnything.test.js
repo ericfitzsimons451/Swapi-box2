@@ -1,23 +1,20 @@
-import { fetchAnything}  from './FetchAnything/fetchAnything'
+import React from 'react'
+import { fetchAnything }  from '../FetchAnything/fetchAnything.js'
 
 describe('fetchAnything', () => {
-    let mockData;
     let mockUrl;
-    
+    let mockData;
+
     beforeEach(() => {
-        mockData = [
-            {name: 'Luke',
-             homeworld: 'Tatooine',
-             species: 'Human',
-             population: 10}
-        ];
         mockUrl = 'https://swapi.co/api/people'
+        mockData = {
+            name: 'Luke',
+        }
         window.fetch = jest.fn().mockImplementation(() => (
             Promise.resolve({
                 ok: true,
-                json: () => Promise.resolve(
-                    mockData
-                )
+                status: 200,
+                json: () => Promise.resolve(mockData)               
             })
         ))
     })
@@ -26,11 +23,22 @@ describe('fetchAnything', () => {
         expect(window.fetch).toHaveBeenCalledWith(mockUrl)
     })
 
-    it('returns an array of data when the status is OK', () => {
-
+    it('returns an array of data when the status is OK', async () => {
+        const result = await fetchAnything(mockUrl)
+        expect(result).toEqual(mockData)
     })
 
-    it('throws an error if the status is not OK', () => {
-
+    it('throws an error if the status is not OK', async () => {
+        window.fetch = jest.fn().mockImplementationOnce(async () => {
+            await Promise.resolve({
+                ok: false,
+                status: 404
+            })
+            try {
+                await fetchAnything(mockUrl)
+            } catch (error) {
+                expect(error.message).toEqual('Fetch failed.')
+            }
+        })
     })
 })

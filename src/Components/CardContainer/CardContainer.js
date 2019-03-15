@@ -3,11 +3,16 @@ import './CardContainer.scss'
 import Card from '../Card/Card'
 
 const CardContainer = (props) => {
-    return(
+    const hasPeople = props.data.people
+    const displayCards = 
+        hasPeople.length && 
+            hasPeople.map((person) => {
+                return <Card cardInfo={person} />
+            })
+        
+    return (
         <div className="card-container">
-            {props.data.people.map((person, i) => {
-                return <Card key={i} cardInfo={person} />
-            })}
+            {displayCards}
         </div>
     )
 //this is where I can map over the props and render the cards using

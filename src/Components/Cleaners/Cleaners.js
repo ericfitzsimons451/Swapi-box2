@@ -1,19 +1,18 @@
 import fetchAnything from '../FetchAnything/FetchAnything'
 
-export const cleanPeople = (peopleArray) => {
+export const cleanPeople = async (peopleArray) => {
     const cleanedPeople = peopleArray.map( async (person) => {
         const homeworld = await fetchAnything(person.homeworld)
         const species = await fetchAnything(person.species)
-        console.log(species)
         return {name: person.name,
                 homeworld: homeworld.name,
                 species: species.name,
                 population: homeworld.population}
         })
-    return Promise.all(cleanedPeople)
+    return await Promise.all(cleanedPeople)
 }
 
-export const cleanPlanets = (planetsArray) => {
+export const cleanPlanets = async (planetsArray) => {
     const cleanedPlanets = planetsArray.map( async (planet) => {
         const residents = planet.residents.map(async (resident) => {
             const foundResident = await fetchAnything(resident)
@@ -21,7 +20,6 @@ export const cleanPlanets = (planetsArray) => {
         })
         const resolvedResidents = await Promise.all(residents)
         const mappedResidents = resolvedResidents.map((resident) => {
-            console.log(resident)
             return resident.name
         })
         return {name: planet.name,
@@ -30,17 +28,17 @@ export const cleanPlanets = (planetsArray) => {
                 climate: planet.climate,
                 residents: mappedResidents}
     })
-    return cleanedPlanets
+    return await Promise.all(cleanedPlanets)
 }
 
-export const cleanVehicles = (vehiclesArray) => {
+export const cleanVehicles = async (vehiclesArray) => {
     let cleanedVehicles = vehiclesArray.map(async (vehicle) => {
         return {name: vehicle.name,
                 model: vehicle.model,
                 class: vehicle.vehicle_class,
                 passengers: vehicle.passengers}
     })
-    return cleanedVehicles
+    return await Promise.all(cleanedVehicles)
 }
 
 export default cleanPlanets

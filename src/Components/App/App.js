@@ -16,7 +16,8 @@ class App extends Component {
       crawlText: '',
       people: [],
       planets: [],
-      vehicles: []
+      vehicles: [],
+      currentSelection: null
     }
   }
 
@@ -24,28 +25,28 @@ class App extends Component {
     const randomNum = Math.floor(Math.random() * 7) + 1
     const response = await fetch(`https://swapi.co/api/films/${randomNum}`)
     const data = await response.json()
-    this.setState({crawlText: data.opening_crawl})
+    this.setState({ crawlText: data.opening_crawl })
   }
 
   fetchPeople = async () => {
     const url = 'https://swapi.co/api/people'
     const people = await fetchAnything(url)
     const cleanedPeople = await cleanPeople(people.results)
-    this.setState({people: cleanedPeople})
+    await this.setState({ people: cleanedPeople, currentSelection: 'people'})
   }
 
   fetchPlanets = async () => {
     const url = 'https://swapi.co/api/planets'
     const planets = await fetchAnything(url)
-    const cleanedPlanets = cleanPlanets(planets.results)
-    this.setState({planets: await Promise.all(cleanedPlanets)})
+    const cleanedPlanets = await cleanPlanets(planets.results)
+    await this.setState({ planets: cleanedPlanets, currentSelection: 'planets'  })
   }
 
   fetchVehicles = async () => {
     const url = 'https://swapi.co/api/vehicles'
     const vehicles = await fetchAnything(url)
-    const cleanedVehicles = cleanVehicles(vehicles.results)
-    this.setState({vehicles: await Promise.all(cleanedVehicles)})
+    const cleanedVehicles = await cleanVehicles(vehicles.results)
+    await this.setState({ vehicles: cleanedVehicles, currentSelection: 'vehicles' })
   }
 
   render() {
@@ -72,10 +73,4 @@ class App extends Component {
 
 export default App;
 
-//put a property in state that will denote
-//the currently selected values (planets, people, etc)
-//then , based on that, I can map over props
-// and pass the correct data
-
-//Card cntainer should be given only the data needed for the cards to render
 

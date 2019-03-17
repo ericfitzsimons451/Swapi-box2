@@ -28,12 +28,12 @@ describe('Cleaners', () => {
 
     const expectedResults = [{name: 'Luke Skywalker', homeworld: "Tatooine", species: 'Human', population: 1000}]
 
-    it('accepts an array and calls fetchAnything', () => {
+    it.skip('accepts an array and calls fetchAnything', () => {
         cleanPeople(mockArray) 
         expect(fetchAnything).toHaveBeenCalled()
     })
 
-    it.only('returns an array of cleaned people objects', async () => {
+    it.skip('returns an array of cleaned people objects', async () => {
         fetchAnything.mockImplementation(() => Promise.resolve(mockArray))
         const result = await cleanPeople(mockArray)
         expect(result).toEqual(expectedResults)

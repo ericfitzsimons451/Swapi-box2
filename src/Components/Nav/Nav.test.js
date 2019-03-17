@@ -3,21 +3,21 @@ import { shallow, mount } from 'enzyme'
 import Nav from '../Nav/Nav'
 
 describe ('Nav', () => {
-    // it('should match the snapshot with 3 functions passed down', () => {
-    //     // const title = <h1>SwapiBox</h1>
-    //     // const button1 = <button>People</button>
-    //     // const button2 = <button>Planets</button>
-    //     // const button3 = <button>Vehicles</button>
-    //     // const button4 = <button>Favorites <span>0</span></button>
+    it.only('should match the snapshot with 3 functions passed down', () => {
+        const title = <h1>SwapiBox</h1>
+        const button1 = <button>People</button>
+        const button2 = <button>Planets</button>
+        const button3 = <button>Vehicles</button>
+        const button4 = <button>Favorites <span>0</span></button>
 
-    //     const wrapper = shallow(<Nav
-    //                                 fetchPeople={jest.fn()} 
-    //                                 fetchPlanets={jest.fn()} 
-    //                                 fetchVehicles={jest.fn()} />)
+        const wrapper = mount(<Nav
+                                    fetchPeople={jest.fn()} 
+                                    fetchPlanets={jest.fn()} 
+                                    fetchVehicles={jest.fn()} />)
 
     // expect(wrapper).toMatchSnapshot()
-    // // expect(wrapper.contains(button1, button2, button3, button4)).toEqual(true)
-    // })
+    expect(wrapper.contains(title, fetchPeople, fetchPlanets, fetchVehicles)).toEqual(true)
+    
 
    
     it('should call the fetchPeople prop when clicked', () => {
